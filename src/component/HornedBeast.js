@@ -15,12 +15,16 @@ class HornedBeast extends React.Component{
             numberOfpets:this.state.numberOfpets+1,
         })
     }
+    displayanimal=()=>{
+        this.props.displayanimal(this.props.Title)
+    }
+
     render(){
         return(
             // <h2>{this.props.title}</h2><img src={this.props.imageUrl}alt={this.props.title}title={this.props.title}/><p>{this.props.descreption}</p>
             <div>
              <Card style={{ width: '18rem' }}>
-             <Card.Img variant="top" src={this.props.imageUrl} />
+             <Card.Img onClick={this.displayanimal} variant="top" src={this.props.imageUrl} />
              <Card.Body>
              <Card.Title>{this.props.title}</Card.Title>
              <Card.Text>

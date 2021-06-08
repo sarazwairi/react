@@ -9,12 +9,14 @@ class Main extends React.Component{
             <div className='img'>
                 <CardGroup>
 
-                {this.props.Data.map(item=>{
+                {this.props.Data.map((item,index)=>{
                     return(
                         <HornedBeast
                         title={item.title}
                         imageUrl={item.image_url}
                         descreption={item.description}
+                        key={index}
+                        displayanimal={this.props.displayanimal}
                         />
                     )
                 })
