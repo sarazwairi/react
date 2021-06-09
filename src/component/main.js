@@ -1,36 +1,29 @@
 /* eslint-disable */
 import React from 'react';
 import HornedBeast from './HornedBeast';
-import 'bootstrap/dist/css/bootstrap.min.css';
 // import CardColumns from 'react-bootstrap/CardColumns';
 import CardGroup from 'react-bootstrap/CardGroup';
 
 class Main extends React.Component {
 
-
-     
     render() {
-       
-        
-
         return (
-
-            <main>
-                <section>
-                
-                <CardGroup >
-                    {this.props.Data.map(item => (
+            <div>
+                <CardGroup>
+                    {this.props.Data.map((element, index) => {
+                        return(
                         <HornedBeast
-                            imageUrl={item.image_url}
-                            title={item.title}
-                            description={item.description}
-                            selectClick={this.props.selectClick}
-                        />
-                    ))}
-</CardGroup>
-                </section>
-            </main>
-        )
-    }
+                            imageUrl={element.image_url}
+                            title={element.title}
+                            description={element.description}
+                            viewAnimal={this.props.viewAnimal} 
+                            key={index}
+                            />)
+                    }
+                    )
+                    }
+                </CardGroup>
+            </div>)
+}
 }
 export default Main;

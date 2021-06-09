@@ -13,13 +13,13 @@ class SelectedBeast extends React.Component {
 
       <Modal show={this.props.show} onHide={this.props.handlClose} >
         <Modal.Header closeButton>
-          <Modal.Title>{this.props.title}</Modal.Title>
+          <Modal.Title>{this.props.details.title}</Modal.Title>
         </Modal.Header>
 
-        <Card.Img variant="top" src={this.props.src} />
 
         <Modal.Body>
-          <p> {this.props.description}</p>
+        <Card.Img onClick={this.displayAnimal} variant="top" src={this.props.details.image_url} alt={this.props.details.title} title={this.props.details.title}/>
+          {/* <p> {this.props.displayAnimal}</p> */}
         </Modal.Body>
         <Modal.Footer>
           <Button onClick={this.props.handlClose}>
