@@ -1,46 +1,62 @@
 import React from 'react';
 import Header from './component/header';
-import Main from './component/main';
-import SelectedBeast from './component/SelectedBeast'
 import Footer from './component/footer';
+import Main from './component/main';
 import Data from './component/data.json';
+import SelectedBeast from './component/SelectedBeast';
 
-class App extends React.Component{
 
-    constructor(props) {
-        super(props);
-    
-        this.state = {
-          displayModal: false,
-          Data: Data,
-          beastData: Data,
-          selectedBeast: {}
-        }
-      }
-    
-      showModal = (name) => {
-    
-        const selectedBeast = Data.find(beast => beast.title === name);
-        console.log(selectedBeast);
-    
-        this.setState({selectedBeast, displayModal:true});
-      }
-    
-      hideModal = () => {
-        this.setState({displayModal: false});
-      }
+class App extends React.Component {
 
-    render(){
-        return(
-            <div>
-                <Header />
-                <Main showModal={this.showModal}/>
-                <SelectedBeast displayModal={this.state.displayModal} hideModal={this.hideModal} selectedBeast={this.state.selectedBeast} />
-                <Footer/>
-            </div>
-        )
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      show: false,
+      title: "",
+      src: "",
+      description: "",
+    };
+  }
+  selectClick = (e) => {
+    this.setState({
+      show: !this.state.show,
+      src: e.target.src,
+      title: e.target.alt,
+     description: e.target.name
+    });
+    console.log(this.state.show);
+    console.log(this.state.src);
+    console.log(this.state.discription);
+
+  }
+
+ 
+
+
+  handleClose = () => {
+    this.setState({ show: !this.state.show });
+  };
+
+
+
+
+  render() {
+    return (
+      <div>
+        <SelectedBeast
+          show={this.state.show}
+          handleClose={this.handleClose}
+          src={this.state.src}
+          description={this.state.description}
+          title={this.state.title}
+        />
+        <Header />
+        <Main Data={Data} selectClick={this.selectClick} />
+        <Footer />
+      </div>
+    )
+  }
 }
 
-export default App;
 
+export default App;

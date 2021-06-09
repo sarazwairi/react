@@ -74,10 +74,29 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 Number and name of feature: ________________________________
 
-Estimate of time needed to complete: _____
+3 features : Feature #1: Display images
+Feature #2: Allow users to vote for their favorite beast
+Feature 3: Bootstrap
 
-Start time: _____
+Estimate of time needed to complete: _____2h
 
-Finish time: _____
+Start time: _____2pm
 
-Actual time needed to complete: _____
+Finish time: _____4pm
+
+
+Actual time needed to complete: _____2h
+
+# lab 03 :
+
+Number and name of feature: ________________________________
+
+Feature #1: Display a Modal
+
+Estimate of time needed to complete: _____2h
+
+Start time: _____12pm
+
+Finish time: _____now
+
+Actual time needed to complete: _____whole day
