@@ -1,25 +1,33 @@
-import React from 'React';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
+  
+import React from 'react';
 
-class SelectedBeast extends React.Component{
-    renser(){
-        return(
-            <div>
-                <Modal show={this.props.show} onHide={this.props.handleClose}>
-                    <Modal.Header closeButton>
-                        <Modal.Title>Modal heading</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>{this.props.selectedAnimal.description}</Modal.Body>
-                    <Card.Img style={{width:'400px'}}variant="top" src={this.props.selectedAnimal.image_url}/>
-                    <Modal.Footer>
-                        <Button variant="secondary" onClick={this.props.handleClose}>CLOSE</Button>
-                    </Modal.Footer>
-                </Modal>
-            </div>
-        )
-    }
+import Modal from 'react-bootstrap/Modal';
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button'
+
+class SelectedBeast extends React.Component {
+  render() {
+    return (
+      <Modal show={this.props.displayModal} onHide={this.props.hideModal}>
+      <Modal.Dialog>
+        <Modal.Header   closeButton />
+        <Modal.Title class="text-left">{this.props.selectedBeast.keyword}</Modal.Title>         
+          <Card style={{ width: '18rem'}}>
+          <Card.Title>{this.props.selectedBeast.title}</Card.Title>
+            <Card.Img src={this.props.selectedBeast.image_url} />
+            <Card.Body>
+              <Card.Text>{this.props.selectedBeast.description}</Card.Text>
+            </Card.Body>
+          </Card>   
+        <Modal.Footer>
+    <Button onClick={this.props.hideModal}>close</Button>
+  </Modal.Footer>
+      </Modal.Dialog>
+
+      </Modal>
+    )
+  }
 }
+
 export default SelectedBeast;
+
