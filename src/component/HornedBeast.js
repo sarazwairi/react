@@ -1,43 +1,40 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button'
+// import Button from 'react-bootstrap/Button';
 
 
 class HornedBeast extends React.Component{
-    
-    constructor(props){
+    constructor(props) {
         super(props);
-        this.state = {
-            horns : 0
-        }
-    }
-
-    incrementNumOfHorns = () => {
-        this.setState ({
-            horns : this.state.horns+1
-        });
-        this.props.showModal(this.props.title);
-    }
     
-    render(){
-        return(
-            <div>
-
-        <Card style={{ width: '18rem' }}
-         onClick={this.incrementNumOfHorns} >
-            <Card.Img variant="top" src={this.props.url} />
-                <Card.Body>
-                    <Card.Title>{this.props.title}</Card.Title>
-                      <Card.Text>{this.props.description}</Card.Text>
-                      <Card.Text>{this.props.keyword}</Card.Text>
-                          <Button variant="primary">😸horns: {this.state.horns}</Button>
-                 </Card.Body>
-                </Card>
-
-            </div>
-        )
+        this.state = {
+          hearts: 0
+        };
+      }
+      incrementHearts = () => {
+        this.setState({
+          hearts: this.state.hearts + 1
+        });
+      };
+      
+      render() {
+        return (
+          <div>
+          < Card className="cardimg" style={{color:'whitesmoke', backgroundColor:'black',width: '30.4rem' ,height:'40rem',borderColor:'black ',padding:'0.2rem'}}>
+              <Card.Img onClick={this.props.selectClick} variant="top" src={this.props.imageUrl} alt={this.props.title} name={this.props.description} style={{ width: '30rem' ,height:'25rem'}} />
+              <Card.Body>
+                  <Card.Title onClick={this.incrementHearts} > <p>💓{this.state.hearts}</p></Card.Title>
+                  <Card.Text>
+                      <h2>{this.props.title}</h2>
+                      <p> {this.props.description}</p>
+                  </Card.Text>
+                  
+              </Card.Body>
+          </Card>
+         
+      </div>
+        );
+      }
     }
-}
-
 export default HornedBeast;
