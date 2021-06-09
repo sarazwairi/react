@@ -4,55 +4,44 @@ import Footer from './component/footer';
 import Main from './component/main';
 import Data from './component/data.json';
 import SelectedBeast from './component/SelectedBeast';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends React.Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      show: false,
-      title: "",
-      src: "",
-      description: "",
+  constructor() {
+    super();
+    this.state={
+      e:{},
+      show:false,
     };
   }
-  selectClick = (e) => {
-    this.setState({
-      show: !this.state.show,
-      src: e.target.src,
-      title: e.target.alt,
-     description: e.target.name
-    });
-    console.log(this.state.show);
-    console.log(this.state.src);
-    console.log(this.state.discription);
 
+  selectClick = (newBeast) => {
+    this.setState({
+      show:true,
+      e:newBeast,
+    });
   }
 
- 
-
-
   handleClose = () => {
-    this.setState({ show: !this.state.show });
+    this.setState({
+      show:false,
+    })
   };
-
-
+  
 
 
   render() {
     return (
       <div>
+        <Header/>
+        <Main Data={Data}
+        selectClick={this.selectClick}/>
+          <Footer />
         <SelectedBeast
           show={this.state.show}
-          handleClose={this.handleClose}
-          src={this.state.src}
-          description={this.state.description}
-          title={this.state.title}
-        />
-        <Header />
-        <Main Data={Data} selectClick={this.selectClick} />
-        <Footer />
+          all={this.state.e}
+          handleClose={this.handleClose}/>
       </div>
     )
   }
