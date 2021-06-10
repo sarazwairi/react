@@ -1,14 +1,14 @@
 import React,{Component} from "react";
-import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
+import Modal from "react-bootstrap/Modal";
+import Button from "react-bootstrap/Button";
 
 export class SelectedBeast extends Component {
 
   render() {
     return (
 
-
-        <Modal show={this.props.show} onHide={this.props.handlClose} >
+<>
+        <Modal show={this.props.show} onHide={this.props.close} >
           <Modal.Header closeButton>
             <Modal.Title>{this.props.all.title}</Modal.Title>
           </Modal.Header>
@@ -25,6 +25,7 @@ export class SelectedBeast extends Component {
                 close</Button>
             </Modal.Footer>
       </Modal>
+      </>
     );
   }
 }

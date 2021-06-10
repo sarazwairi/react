@@ -1,5 +1,5 @@
 import React,{Component} from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 import Form from "react-bootstrap/Form";
 
 export class Forms extends Component {
