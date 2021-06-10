@@ -39,8 +39,8 @@ class App extends React.Component {
         selectClick={this.selectClick}/>
           <Footer />
         <SelectedBeast
-          show={this.state.show}
           all={this.state.e}
+          show={this.state.show}
           handleClose={this.handleClose}/>
       </div>
     )

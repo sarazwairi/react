@@ -14,7 +14,7 @@ export class SelectedBeast extends Component {
           </Modal.Header>
           <Modal.Body>
             <div>
-            <img src={this.props.images} alt={this.props.all.title}/>
+            <img src={this.props.all.images} alt={this.props.all.title}/>
             </div>
             <div>
               {this.props.all.description}

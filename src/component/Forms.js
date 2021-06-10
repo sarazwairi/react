@@ -8,8 +8,8 @@ export class Forms extends Component {
         return(
           <div>
                     <Form.Label>How Many Horne?</Form.Label>
-                    <Form.Control as="select" onChange={(event)=>this.props.result(event.target.value)} as="select">
-                        <option value='all'>all</option>
+                    <Form.Control as="select" onChange={(event)=>this.props.result(event.target.value)}>
+                        <option value='All'>all</option>
                         <option value='1'>one</option>
                         <option value='2'>two</option>
                         <option value='3'>three</option>
