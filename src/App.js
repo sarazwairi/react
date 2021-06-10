@@ -1,10 +1,10 @@
-import React from 'react';
-import Header from './component/header';
-import Footer from './component/footer';
-import Main from './component/main';
-import Data from './component/data.json';
-import SelectedBeast from './component/SelectedBeast';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React from "react";
+import Header from "./component/header";
+import Footer from "./component/footer";
+import Main from "./component/main";
+import Data from "./component/data.json";
+import SelectedBeast from "./component/SelectedBeast";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 class App extends React.Component {
 

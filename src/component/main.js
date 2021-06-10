@@ -1,12 +1,12 @@
-import React from 'react';
-import HornedBeast from './HornedBeast';
-import CardColumns from 'react-bootstrap/CardColumns';
+import React from "react";
+import HornedBeast from "./HornedBeast";
+import CardColumns from "react-bootstrap/CardColumns";
 // import CardGroup from 'react-bootstrap/CardGroup';
 import Forms from "./Forms";
 
 class Main extends React.Component {
     constructor(props) {
-        super(props);
+        super(props)
         this.state = {
             filteredData: this.props.Data,
         }
@@ -56,7 +56,6 @@ class Main extends React.Component {
                 <HornedBeast
                     title={beasts.title}
                     images={beasts.image_url}
-                    // title={beasts.title}
                     description={beasts.description}
                     selectClick={this.props.selectClick}
                     />
