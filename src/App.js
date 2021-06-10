@@ -18,10 +18,10 @@ class App extends React.Component {
 
   selectClick = (newBeast) => {
     this.setState({
-      show:true,
       e:newBeast,
+      show:true,
     });
-  }
+  };
 
   handleClose = () => {
     this.setState({
