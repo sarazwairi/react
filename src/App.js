@@ -26,7 +26,7 @@ class App extends React.Component {
   handleClose = () => {
     this.setState({
       show:false,
-    })
+    });
   };
   
 
@@ -43,7 +43,7 @@ class App extends React.Component {
           show={this.state.show}
           handleClose={this.handleClose}/>
       </div>
-    )
+    );
   }
 }
 
